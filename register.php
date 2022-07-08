@@ -1,11 +1,13 @@
 <?php
 	session_start();
-    use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
+    use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
-    require_once('../phpmailer/src/PHPMailer.php');
-    require_once('../phpmailer/src/Exception.php');
-    require_once('../phpmailer/src/SMTP.php');
+
+    // use Exception;
+    require_once('PHPMailer/src/PHPMailer.php');
+    require_once('PHPMailer/src/Exception.php');
+    require_once('PHPMailer/src/SMTP.php');
     require_once('db.php');
 
 	function generateRandomString($length = 32) {
@@ -36,7 +38,7 @@
     
         $mail->Host = "smtp.gmail.com";
     
-        //$mail-isSMTP();
+        $mail-isSMTP();
     
         $mail->SMTPAuth = true;
     
@@ -52,14 +54,13 @@
     
         $mail->isHTML(true);
         
-        $mail->Body = "<div style='padding: 10%; background: #f2f2f2;'><div style='background: white; padding: 10px;'>$mesg</div></div>
-        ";
+        $mail->Body = "<div style='padding: 10%; background: #f2f2f2;'><div style='background: white; padding: 10px;'>$mesg</div></div> ";
     
         $mail->setFrom($sendfrom,$name1);
     
         $mail->addAddress($user);
         
-        //$mail->addAttachment('logo2.png', 'Green Leaf');
+        $mail->addAttachment('logo2.png', 'Green Leaf');
     
         if($mail->send()){
             $msg = "<h4 style='color: grren; font-weight: bold; text-align:center;'>We have received your request, Please check your email for details.</h4>";
@@ -70,11 +71,11 @@
 	}
 
 ?>
+
 <?php
     
-    
-    
-   /* if(isset($_POST['submit'])){
+  /*  
+    if(isset($_POST['submit'])){
         
 
         $sendfrom = "hussain0296@gmail.com";
@@ -86,7 +87,7 @@
     
         $mail->Host = "smtp.gmail.com";
     
-        //$mail-isSMTP();
+        $mail-isSMTP();
     
         $mail->SMTPAuth = true;
     
@@ -109,7 +110,7 @@
     
         $mail->addAddress($user);
         
-        //$mail->addAttachment('logo2.png', 'Green Leaf');
+        $mail->addAttachment('logo2.png', 'Green Leaf');
     
         if($mail->send()){
             $msg = "<h4 style='color: grren; font-weight: bold; text-align:center;'>We have received your request, Please check your email for details.</h4>";
@@ -118,8 +119,12 @@
             $msg = "<h4 style='color: red; font-weight: bold;'>Something wrong</h4>";
         }
     }
+
     */
-?>
+    
+?> 
+
+
 <!DOCTYPE html>
 <html>
 <head>

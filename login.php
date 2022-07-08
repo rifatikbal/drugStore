@@ -36,7 +36,7 @@
 <body>
 	<div style="width: 400px; margin: 150px auto; background: white; border-radius: 15px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); padding: 25px 15px;">
 		<h4 style="color: #66A620">Login here:</h4>
-		<img src="logo2" width="50" style="margin-left: 310px; margin-top: -70px;">
+		<img src="logo2.png" width="50" style="margin-left: 310px; margin-top: -70px;">
 		<br>
 		<form method="post" action="">
 			<?php
